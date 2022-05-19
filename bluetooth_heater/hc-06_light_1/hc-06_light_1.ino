@@ -9,8 +9,10 @@ void setup() {
   // connect BT module Vcc to 5V, GND to GND
   // put your setup code here, to run once:
   // set digital pint to control as an output
-  pinMode(13, OUTPUT);
+  pinMode(13,OUTPUT);
   // set datarate for the SoftwareSerial port
+  digitalWrite(13,HIGH);
+  // set the pin high initially for the relay
   mySerial.begin(9600);
   // Send test message to other device
   mySerial.println("Hello from Arduino");
@@ -28,12 +30,12 @@ void loop() {
     if (a=='1')
     {
       digitalWrite(13,HIGH);
-      mySerial.println("LED ON");  
+      mySerial.println("HEATER ON");  
     }
     if (a=='0')
     {
       digitalWrite(13,LOW);
-      mySerial.println("LED OFF");
+      mySerial.println("HEATER OFF");
     }
     if (a=='?')
     {
