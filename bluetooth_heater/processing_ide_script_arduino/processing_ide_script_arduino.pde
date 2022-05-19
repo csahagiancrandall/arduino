@@ -6,6 +6,7 @@ void setup() {
   size(450,500);
   myPort = new Serial(this, "COM9", 9600);// Starts the serial communications
   myPort.bufferUntil('\n'); // Defines up to which character the data ...
+  myPort.write('1');
 }
 
 void serialEvent (Serial myPort) { // Checks for available data in the Serial ...
